@@ -52,12 +52,14 @@ const Profile = () => {
 
   const viewCart = () => {
     if (Array.isArray(cart) && cart.length) {
+      console.log(cart);
       return (
         <div>
           {cart.map((item) => {
             if (item) {
               return (
                 <CartItem
+                  key={item.id}
                   cart={cart}
                   item={item}
                   onAdd={onAdd}
@@ -85,7 +87,7 @@ const Profile = () => {
       return (
         <div>
           {wishlist.map((item) => {
-            return <WishItem item={item} onTapRemove={removeFromWishlist} />;
+            return <WishItem  item={item} onTapRemove={removeFromWishlist} />;
           })}
         </div>
       );
@@ -192,7 +194,7 @@ const Profile = () => {
           <form className="m-2 bg-white p-2 mt-3 ml-3 rounded">
             <div className="form-row">
               <div className="form-group col-md-6">
-                <label for="inputAddress">Street</label>
+                <label htmlFor="inputAddress">Street</label>
                 <input
                   type="text"
                   onChange={(e) => setStreet(e.target.value)}
@@ -202,7 +204,7 @@ const Profile = () => {
                 />
               </div>
               <div className="form-group col-md-4">
-                <label for="inputCity">City</label>
+                <label htmlFor="inputCity">City</label>
                 <input
                   type="text"
                   onChange={(e) => setCity(e.target.value)}
@@ -214,7 +216,7 @@ const Profile = () => {
 
             <div className="form-row">
               <div className="form-group col-md-3">
-                <label for="inputCity">State</label>
+                <label htmlFor="inputCity">State</label>
                 <input
                   type="text"
                   onChange={(e) => setState(e.target.value)}
@@ -223,7 +225,7 @@ const Profile = () => {
                 />
               </div>
               <div className="form-group col-md-2">
-                <label for="inputZip">Postal Code</label>
+                <label htmlFor="inputZip">Postal Code</label>
                 <input
                   type="text"
                   onChange={(e) => setPostalCode(e.target.value)}
@@ -232,7 +234,7 @@ const Profile = () => {
                 />
               </div>
               <div className="form-group col-md-2">
-                <label for="inputZip">Country</label>
+                <label htmlFor="inputZip">Country</label>
                 <input
                   type="text"
                   onChange={(e) => setCountry(e.target.value)}

@@ -1,7 +1,9 @@
+import { logDOM } from '@testing-library/react';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ProductCard = ({item}) => {
+  console.log('item',item);
 
     const {_id,banner, available, price, name, desc, type} = item;
 

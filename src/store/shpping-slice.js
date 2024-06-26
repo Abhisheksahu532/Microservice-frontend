@@ -11,7 +11,6 @@ const shoppingSlice = createSlice({
   initialState,
   reducers: {
     landingProducts(state, action) {
-      console.log(action)
       state.products = action.payload.products;
       state.categories = action.payload.categories;
     },

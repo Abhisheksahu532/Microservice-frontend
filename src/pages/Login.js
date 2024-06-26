@@ -11,7 +11,9 @@ const Login = () => {
 
   const dispatch = useAppDispatch();
 
-  const { id, token } = user;
+  // const { id, token } = user;
+
+  const token= localStorage.getItem('token')
 
   const { address, whishlist, orders } = profile;
 
@@ -21,6 +23,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   useEffect(() => {
+    
     if (token) {
       dispatch(onViewProfile());
     }

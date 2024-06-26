@@ -8,7 +8,7 @@ const Home = () => {
   const { categories, products } = useAppSelector(
     (state) => state.shoppingReducer
   );
-  console.log('ca', categories)
+  // console.log('ca', categories);
 
   const dispatch = useAppDispatch();
 
